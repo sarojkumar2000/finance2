@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Loan Details</title>
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body class="container-fluid mt-5">
+  <div class="row">
+    <div class="col-md-12">
+      <h1>Hi {{ user.name }}</h1>
+
+      <h2>Your Loan Details</h2>
+
+      <table class="table table-striped table-bordered">
+        <thead>
+          <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Loan Type</th>
+            <th scope="col">Loan Amount</th>
+            <th scope="col">Due</th>
+            <th scope="col">Due date</th>
+            <th scope="col">Last paid</th>
+            
+            <th scope="col">Tenure</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>{{ user.name }}</td>
+            <td>{{ user.loan_type }}</td>
+            <td>{{ user.amount }}</td>
+            <td>{{ user.next_due }}</td>
+            <td>{{ user.next_due_date }}</td>
+            <td>{{ user.lastpaid }}</td>
+            
+            <td>{{ user.tenure }}</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- "Pay Due" button with a link to a payment page -->
+      <a href="/pay-due/{{ user.id }}" class="btn btn-primary">Pay Due</a>
+
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>
